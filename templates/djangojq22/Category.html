@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Category</title>
+        <link href = "https://code.jquery.com/ui/1.12.1/themes/ui-lightness/jquery-ui.css" rel = "stylesheet">
+      <script src = "https://code.jquery.com/jquery-1.12.1.js"></script>
+      <script src = "https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+      <script src="{% static "js/slider/slider.js" %}"></script>
+</head>
+<body>
+        <form id="category_form" method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+
+      {{ form.as_p }}
+      <div id="label">Please slide !</div>
+      <input type="text" id="days" />
+      <div id="slider"></div>
+                <input type="submit" name="submit" value="Create/update category" />
+
+    </form>
+    <a href="{% url 'djangojq22:index' %}">Cancel</a>
+
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <title>StarTrackr!</title>
+<link rel="stylesheet" href="{% static 'css/chapter_02/10_adding_classes/zebra.css' %}">
+        <link href = "https://code.jquery.com/ui/1.12.1/themes/ui-lightness/jquery-ui.css" rel = "stylesheet">
+      <script src = "https://code.jquery.com/jquery-1.12.1.js"></script>
+      <script src = "https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+</head>
+        {% if category %}
+        <h1>{{ category.name }} views: {{ category.views }}</h1>
+			<div>
+            <strong id="like_count">{{ category.likes }}</strong> people like this category
+
+                <button id="likes" data-categoryid="{{category.pk}}" class="btn btn-primary btn-sm" type="button">
+                    Like
+                </button>
+            </div>
+
+        {% else %}
+            The category does not exist
+        {% endif %}
+<script src="{% static "js/show_category/script.js" %}"></script>
+</html>

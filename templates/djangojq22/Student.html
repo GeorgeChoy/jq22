@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <title>Student!</title>
+<link rel="stylesheet" href="{% static 'css/chapter_02/10_adding_classes/zebra.css' %}">
+        <link href = "https://code.jquery.com/ui/1.12.1/themes/ui-lightness/jquery-ui.css" rel = "stylesheet">
+      <script src = "https://code.jquery.com/jquery-1.12.1.js"></script>
+      <script src = "https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+      <script src="{% static "js/datepicker/datepicker.js" %}"></script>
+</head>
+<body>
+
+        <form id="student_form" method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+
+      {{ form.as_p }}
+                <input type="submit" name="submit" value="Create/update student" />
+
+    </form>
+    <a href="{% url 'djangojq22:index' %}">Cancel</a>
+
+</body>
+</html>

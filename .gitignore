@@ -116,5 +116,5 @@ GitHub.sublime-settings
 .history
 
 # media files #
-.media/*.jpg
-.media/images/*
+media/*.jpg
+media/images/*
